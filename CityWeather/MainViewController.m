@@ -146,7 +146,7 @@
         [self cleanTextFieldAndStartAnimatingAct];
         [self getAddressFrom:_toAddPin.coordinate.latitude And:_toAddPin.coordinate.longitude];
     } else {
-        _addressTextField.text = @"Sem conexão com a internet";
+        _addressTextField.text = @"No internet connection";
     }
 }
 
@@ -223,7 +223,7 @@
         
         NSLog(@"Error: %@", error);
         
-        [self checkInternetConnection] ? [self popsErrorAlertViewToTheUserWith:@"Falha ao buscar cidades"] : [self popsErrorAlertViewToTheUserWith:@"Favor verifique sua conexão"];
+        [self checkInternetConnection] ? [self popsErrorAlertViewToTheUserWith:@"Coulnd't fetch cities"] : [self popsErrorAlertViewToTheUserWith:@"Please verify your connection"];
         
         [_activityIndicator stopAnimating];
         
